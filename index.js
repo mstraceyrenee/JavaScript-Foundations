@@ -20,8 +20,10 @@ Create another variable called `periods` and give it the value of years*12.
 */
 let monthlyInterestRate = (interestRate / 12);
 
-console.log(monthlyInterestRate);
+let periods = (years * 12);
 
+console.log(monthlyInterestRate);
+console.log(periods);
 
 
 // 🏡 Task 2: Harder Math
@@ -33,7 +35,13 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+let base = Math.pow(1.00416667, 360);
+let numerator = (monthlyInterestRate * base);
+let denominator = (base -1);
 
+let monthlyRate = (principal * (numerator / denominator));
+
+console.log(monthlyRate);
 
 
 
