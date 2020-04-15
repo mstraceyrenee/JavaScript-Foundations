@@ -8,7 +8,6 @@ let interestRate = "0.05";
 let years = "30";
 const name = "Tracey";
 
-console.log(name);
 
 
 
@@ -19,7 +18,9 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 
 Create another variable called `periods` and give it the value of years*12.
 */
+let monthlyInterestRate = (interestRate / 12);
 
+console.log(monthlyInterestRate);
 
 
 
