@@ -22,8 +22,8 @@ let monthlyInterestRate = (interestRate / 12);
 
 let periods = (years * 12);
 
-console.log(monthlyInterestRate);
-console.log(periods);
+// console.log(monthlyInterestRate);
+// console.log(periods);
 
 
 // 🏡 Task 2: Harder Math
@@ -41,7 +41,7 @@ let denominator = (base -1);
 
 let monthlyRate = (principal * (numerator / denominator));
 
-console.log(monthlyRate);
+// console.log(monthlyRate);
 
 
 
@@ -51,10 +51,12 @@ console.log(monthlyRate);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator (){
-    
-}
+let phrase1 = ", your monthly rate is $";
 
+function mortgageCalculator(val1, val2, val3) {
+    return val1 + val2 + val3;
+}
+console.log(mortgageCalculator(name, phrase1, monthlyRate));
 
 
 // 🏡 Task 4: Arguments and Parameters
