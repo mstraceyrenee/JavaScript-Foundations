@@ -65,14 +65,14 @@ For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
-function mortgageCalculator(P, I, N) {
-    let monthlyInterestRate = (I / 12);
-    let periods = (N * 12);
-    let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
-    let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
-    return Math.round((P * (numerator / denominator)) * 100) / 100;
-}
-console.log(mortgageCalculator(200000, 0.05, 30));
+// function mortgageCalculator(P, I, N) {
+//     let monthlyInterestRate = (I / 12);
+//     let periods = (N * 12);
+//     let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
+//     let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
+//     return Math.round((P * (numerator / denominator)) * 100) / 100;
+// }
+// console.log(mortgageCalculator(200000, 0.05, 30));
 
 
 // 🏡 Task 5: Conditionals
@@ -81,8 +81,21 @@ console.log(mortgageCalculator(200000, 0.05, 30));
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
-
-
+function mortgageCalculator(P, I, N, C) {
+    if(C > 740) {
+        I = (I - 0.005);
+    }else if(C < 660) {
+        I = (I + 0.005);
+    }else{
+        I = I;
+    }
+    let monthlyInterestRate = (I / 12);
+    let periods = (N * 12);
+    let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
+    let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
+    return Math.round((P * (numerator / denominator)) * 100) / 100;
+}
+console.log(mortgageCalculator(200000, 0.05, 30, 550));
 
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
