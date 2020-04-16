@@ -3,9 +3,9 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-let principal = "200000";
-let interestRate = "0.05";
-let years = "30";
+let principal = 200000;
+let interestRate = 0.05;
+let years = 30;
 const name = "Tracey";
 
 
@@ -35,11 +35,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-let base = Math.pow(1.00416667, 360);
-let numerator = (monthlyInterestRate * base);
-let denominator = (base -1);
+let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
+let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
 
-let monthlyRate = (principal * (numerator / denominator));
+let monthlyRate = Math.round((principal * (numerator / denominator)) * 100) / 100;
 
 // console.log(monthlyRate);
 
